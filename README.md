@@ -12,6 +12,6 @@
 
 Не рекомендутся оставлять так, после выполнения скриптов 
 
-<codeSet-ExecutionPolicy Restricted</code>
+<code>Set-ExecutionPolicy Restricted</code>
 
 После появляется скрипт uninstall, который возвращает все на круги своя.
