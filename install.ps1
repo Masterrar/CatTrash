@@ -16,7 +16,7 @@ Set-ItemProperty -Path $regPath `
 Set-ItemProperty -Path $regPath `
     -Name full -Value "$iconpath\$iconFolderName\Pop_cat_closed.ico, 0"
 
-# Создания uninstall файла
+# Создание uninstall файла
 $script = 
 "Remove-Item -Path '$iconpath\CatTrash'
 
