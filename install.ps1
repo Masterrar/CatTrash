@@ -4,17 +4,19 @@ $iconFolderName = "CatTrash"
 
 Copy-Item -Path "$PSScriptRoot\$iconFolderName\" -Destination $iconpath -Force -Recurse
 
+# Сохраняем старое значение
 $defaultOpenPath = (Get-ItemProperty -Path $regPath `
     -Name empty).empty
 $defaultClosedPath = (Get-ItemProperty -Path $regPath `
     -Name full).full
-$defaultOpenPath = 'C:\WINDOWS\System32\imageres.dll,-55'
-$defaultClosedPath = 'C:\WINDOWS\System32\imageres.dll,-54'
+
+# Присваиваем новое
 Set-ItemProperty -Path $regPath `
     -Name empty -Value "$iconpath\$iconFolderName\Pop_cat_open.ico, 0"
 Set-ItemProperty -Path $regPath `
     -Name full -Value "$iconpath\$iconFolderName\Pop_cat_closed.ico, 0"
 
+# Создания uninstall файла
 $script = 
 "Remove-Item -Path '$iconpath\CatTrash'
 
